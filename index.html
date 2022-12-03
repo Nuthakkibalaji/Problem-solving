@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS handson-6</title>
+</head>
+<style>
+    h2{
+        text-align: center;
+        color:brown;
+        text-decoration: underline;
+    }
+    h3{
+        color: brown;
+        font-size: 20px;
+    }
+    pre{
+        font-size: 15px;
+    }
+</style>
+<body>
+    <h2>Problem Solving</h2>
+
+    <h3>1. Find the Smaller Angle</h3>
+    <pre>
+        var Minimal_Angle = (h, m) => 
+        {
+            h = h % 12;
+         
+             h = (h * 360) / 12 + (m * 360) / (12 * 60);
+         
+              m = (m * 360) / (60);
+         
+              angle = Math.abs(h - m);
+         
+            if (angle > 180) {
+                angle = 360 - angle;
+            }
+         
+            return angle;  
+        };
+    </pre>
+
+   <h3>2. Check whether the year is Leap year or not.</h3>
+  <pre>  
+     var Check_Leap = (year) => 
+      {
+     if((year%4==0) && (year%100!=0))
+      return (" Leap Year");
+  
+      else if(year%400==0){
+      return (" Leap Year");
+     }
+      else{
+      return (" Non Leap Year");
+     } 
+
+     };        
+   </pre>
+
+   <h3>3. Perfect Number Check.</h3>
+   
+   <pre>
+     var Perfect_Check = (N) => 
+      {
+      var j = 0;
+      for(var i=1;i<=N/2;i++)
+     {
+      if(N%i === 0)
+      {
+         j += i;
+       }
+     }
+   
+     if(j === N && j !== 0)
+     {
+      return ("YES");
+     } 
+     else
+     {
+     r eturn  ("NO");
+     }  
+       };
+   </pre>
+
+   <h3>4. Reverse a Number.</h3>
+   <pre>
+    var Reverse_Number = (N) => 
+    {
+     let rev=0;
+     let reversed;
+     while(N!=0){
+       reversed=N%10;
+       rev=rev*10+reversed;
+       N=Math.floor(N/10);
+     }
+     return rev;
+    
+    };
+   </pre>
+
+   <h3>5. Substring Check.</h3>
+   <pre>   
+    var Substring_Check = (S1, S2) => 
+   {
+   const sArr=S1.split(" ")
+   for(let i=0;i < sArr.length;i++)
+    {
+    if(sArr[i]===S2) {
+      return "YES";
+     }
+   }
+  return "NO";
+
+};
+ </pre>
+</body>
+</html>
